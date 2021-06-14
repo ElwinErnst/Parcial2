@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Medical Centers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Address</th>
+      <th>Phone number</th>
+      <th>Medicalcentertype</th>
+      <th>Appointment num</th>
+      <th>Guards num</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medical_centers.each do |medical_center| %>
+      <tr>
+        <td><%= medical_center.name %></td>
+        <td><%= medical_center.description %></td>
+        <td><%= medical_center.address %></td>
+        <td><%= medical_center.phone_number %></td>
+        <td><%= medical_center.medicalcentertype_id %></td>
+        <td><%= medical_center.appointments.count %></td>
+        <td><%= medical_center.guards.count %></td>
+        <td><%= link_to 'Show', medical_center %></td>
+        <td><%= link_to 'Edit', edit_medical_center_path(medical_center) %></td>
+        <td><%= link_to 'Destroy', medical_center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medical Center', new_medical_center_path %>

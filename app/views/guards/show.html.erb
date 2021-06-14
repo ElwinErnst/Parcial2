@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guard date:</strong>
+  <%= @guard.guard_date %>
+</p>
+
+<p>
+  <strong>Worker:</strong>
+  <%= @guard.worker_id %>
+</p>
+
+<p>
+  <strong>Medicalcenter:</strong>
+  <%= @guard.medicalcenter_id %>
+</p>
+
+<%= link_to 'Edit', edit_guard_path(@guard) %> |
+<%= link_to 'Back', guards_path %>
